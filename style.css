@@ -1,0 +1,9 @@
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #EEF7FF;
+    /* biru keputihan */
+    color: #2C3E50;
+    /* biru gelap untuk teks */
+}

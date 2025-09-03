@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemilihan Ketua OSIS</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        utama: "#CDE8E5",  // biru lembut
+                        terang: "#EEF7FF", // biru keputihan
+                        teks: "#2C3E50",   // biru gelap
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-terang text-teks min-h-screen flex items-center justify-center p-4 font-[Inter]">
+    <div id="app"
+        class="bg-white border border-utama rounded-3xl shadow-2xl p-6 md:p-10 max-w-4xl w-full flex flex-col items-center">
+
+        <!-- Judul -->
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 leading-tight">
+            Pemilihan Ketua OSIS SMK Gracia Bandung
+        </h1>
+        <p class="text-center mb-10 text-lg md:text-xl">
+            Pilih kandidat terbaikmu dengan satu kali klik.
+        </p>
+
+        <!-- Container Kandidat -->
+        <div id="candidates-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            <!-- Kandidat dibuat dinamis via JS -->
+        </div>
+
+        <!-- Modal Pesan -->
+        <div id="message-modal"
+            class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden flex items-center justify-center">
+            <div class="bg-terang border-2 border-utama rounded-xl p-8 max-w-sm w-full text-center shadow-lg">
+                <p id="modal-text" class="text-lg md:text-xl font-semibold mb-4 text-teks"></p>
+                <button id="modal-close-btn"
+                    class="bg-utama text-teks font-bold py-2 px-6 rounded-full hover:opacity-80 transition duration-300">
+                    OK
+                </button>
+            </div>
+        </div>
+
+        <!-- Bagian Admin -->
+        <div class="mt-16 w-full max-w-md"> <!-- mt-16 biar ada jarak lebih jauh -->
+            <div id="view-results-form" class="bg-terang p-6 rounded-2xl shadow-inner border border-utama">
+                <h2 class="text-2xl font-bold mb-4 text-center text-teks">Lihat Hasil Polling</h2>
+                <input type="password" id="admin-password-input" placeholder="Masukkan Kata Sandi"
+                    class="w-full p-3 rounded-lg bg-white border border-utama text-teks placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-utama mb-4">
+                <button id="view-results-btn"
+                    class="w-full bg-utama text-teks font-bold py-3 px-6 rounded-full hover:opacity-80 transition duration-300">
+                    Lihat Hasil
+                </button>
+            </div>
+
+            <!-- Panel Hasil Admin -->
+            <div id="results-display" class="hidden mt-6 bg-terang p-6 rounded-2xl border border-utama">
+                <h2 class="text-2xl font-bold mb-4 text-center text-teks">Hasil Voting</h2>
+                <div id="results-list" class="flex flex-col gap-4">
+                    <!-- Hasil muncul via JS -->
+                </div>
+
+                <!-- Tombol Admin -->
+                <div class="flex flex-col gap-3 mt-6">
+                    <button id="reset-btn"
+                        class="bg-red-500 text-white font-bold py-3 px-8 rounded-full hover:bg-red-600 transition duration-300">
+                        Reset Voting
+                    </button>
+                    <button id="download-btn"
+                        class="bg-green-500 text-white font-bold py-3 px-8 rounded-full hover:bg-green-600 transition duration-300">
+                        Download CSV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
