@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const candidates = [
         { id: 1, name: "Carren Isabella", image: "img/carren-2.jpg" },
         { id: 2, name: "Ivanna Aurelia", image: "img/ivanna.jpg" },
-        { id: 3, name: "Semmy Wijaya(El Dudung)", image: "img/semmy.jpg" },
+        { id: 3, name: "Semmy Wijaya (Dudung)", image: "img/semmy.jpg" },
     ];
 
     // Elemen DOM
